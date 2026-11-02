@@ -1,0 +1,1243 @@
+{
+  "model": "gvsm",
+  "k_concepts": null,
+  "cutoff": 5,
+  "queries": [
+    {
+      "query_id": "Q1",
+      "query": "equipment left on after the factory closes",
+      "relevant": [
+        "KB01",
+        "KB02",
+        "KB08",
+        "KB09",
+        "KB23",
+        "KB27",
+        "KB36"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB08",
+          "score": 0.7729
+        },
+        {
+          "rank": 2,
+          "document": "KB13",
+          "score": 0.597
+        },
+        {
+          "rank": 3,
+          "document": "KB01",
+          "score": 0.32
+        },
+        {
+          "rank": 4,
+          "document": "KB27",
+          "score": 0.292
+        },
+        {
+          "rank": 5,
+          "document": "KB16",
+          "score": 0.2602
+        },
+        {
+          "rank": 6,
+          "document": "KB36",
+          "score": 0.1835
+        },
+        {
+          "rank": 7,
+          "document": "KB12",
+          "score": 0.1744
+        },
+        {
+          "rank": 8,
+          "document": "KB02",
+          "score": 0.1544
+        },
+        {
+          "rank": 9,
+          "document": "KB09",
+          "score": 0.1421
+        },
+        {
+          "rank": 10,
+          "document": "KB29",
+          "score": 0.1289
+        },
+        {
+          "rank": 11,
+          "document": "KB23",
+          "score": 0.1091
+        },
+        {
+          "rank": 12,
+          "document": "KB21",
+          "score": 0.0929
+        },
+        {
+          "rank": 13,
+          "document": "KB18",
+          "score": 0.0872
+        },
+        {
+          "rank": 14,
+          "document": "KB26",
+          "score": 0.0788
+        },
+        {
+          "rank": 15,
+          "document": "KB03",
+          "score": 0.0728
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 0.4286,
+        "f1@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.6548,
+        "average_precision": 0.7159
+      },
+      "confusion": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 4,
+        "tn": 31
+      }
+    },
+    {
+      "query_id": "Q2",
+      "query": "rotating machine mechanical wear",
+      "relevant": [
+        "KB05",
+        "KB06",
+        "KB10",
+        "KB24",
+        "KB28"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB06",
+          "score": 0.8799
+        },
+        {
+          "rank": 2,
+          "document": "KB05",
+          "score": 0.5086
+        },
+        {
+          "rank": 3,
+          "document": "KB28",
+          "score": 0.3555
+        },
+        {
+          "rank": 4,
+          "document": "KB10",
+          "score": 0.3447
+        },
+        {
+          "rank": 5,
+          "document": "KB13",
+          "score": 0.2631
+        },
+        {
+          "rank": 6,
+          "document": "KB12",
+          "score": 0.2356
+        },
+        {
+          "rank": 7,
+          "document": "KB39",
+          "score": 0.2076
+        },
+        {
+          "rank": 8,
+          "document": "KB38",
+          "score": 0.2018
+        },
+        {
+          "rank": 9,
+          "document": "KB23",
+          "score": 0.1776
+        },
+        {
+          "rank": 10,
+          "document": "KB25",
+          "score": 0.1739
+        },
+        {
+          "rank": 11,
+          "document": "KB14",
+          "score": 0.1733
+        },
+        {
+          "rank": 12,
+          "document": "KB22",
+          "score": 0.1397
+        },
+        {
+          "rank": 13,
+          "document": "KB24",
+          "score": 0.1318
+        },
+        {
+          "rank": 14,
+          "document": "KB37",
+          "score": 0.1311
+        },
+        {
+          "rank": 15,
+          "document": "KB34",
+          "score": 0.1299
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.8,
+        "recall@5": 0.8,
+        "f1@5": 0.8,
+        "mrr": 1.0,
+        "ndcg@5": 0.8688,
+        "average_precision": 0.8769
+      },
+      "confusion": {
+        "tp": 4,
+        "fp": 1,
+        "fn": 1,
+        "tn": 34
+      }
+    },
+    {
+      "query_id": "Q3",
+      "query": "shift heavy loads to cheaper hours",
+      "relevant": [
+        "KB14",
+        "KB21",
+        "KB40"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB21",
+          "score": 0.9011
+        },
+        {
+          "rank": 2,
+          "document": "KB27",
+          "score": 0.4642
+        },
+        {
+          "rank": 3,
+          "document": "KB40",
+          "score": 0.4221
+        },
+        {
+          "rank": 4,
+          "document": "KB36",
+          "score": 0.4197
+        },
+        {
+          "rank": 5,
+          "document": "KB01",
+          "score": 0.3798
+        },
+        {
+          "rank": 6,
+          "document": "KB02",
+          "score": 0.3676
+        },
+        {
+          "rank": 7,
+          "document": "KB14",
+          "score": 0.3365
+        },
+        {
+          "rank": 8,
+          "document": "KB16",
+          "score": 0.257
+        },
+        {
+          "rank": 9,
+          "document": "KB08",
+          "score": 0.2394
+        },
+        {
+          "rank": 10,
+          "document": "KB09",
+          "score": 0.2362
+        },
+        {
+          "rank": 11,
+          "document": "KB23",
+          "score": 0.2343
+        },
+        {
+          "rank": 12,
+          "document": "KB18",
+          "score": 0.224
+        },
+        {
+          "rank": 13,
+          "document": "KB13",
+          "score": 0.1835
+        },
+        {
+          "rank": 14,
+          "document": "KB29",
+          "score": 0.1658
+        },
+        {
+          "rank": 15,
+          "document": "KB05",
+          "score": 0.1309
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 0.6667,
+        "f1@5": 0.5,
+        "mrr": 1.0,
+        "ndcg@5": 0.7039,
+        "average_precision": 0.6984
+      },
+      "confusion": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 1,
+        "tn": 34
+      }
+    },
+    {
+      "query_id": "Q4",
+      "query": "compressed air wastage",
+      "relevant": [
+        "KB03",
+        "KB04",
+        "KB26"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB26",
+          "score": 0.7484
+        },
+        {
+          "rank": 2,
+          "document": "KB03",
+          "score": 0.6528
+        },
+        {
+          "rank": 3,
+          "document": "KB01",
+          "score": 0.5718
+        },
+        {
+          "rank": 4,
+          "document": "KB04",
+          "score": 0.5214
+        },
+        {
+          "rank": 5,
+          "document": "KB08",
+          "score": 0.3703
+        },
+        {
+          "rank": 6,
+          "document": "KB02",
+          "score": 0.3424
+        },
+        {
+          "rank": 7,
+          "document": "KB25",
+          "score": 0.3289
+        },
+        {
+          "rank": 8,
+          "document": "KB05",
+          "score": 0.2376
+        },
+        {
+          "rank": 9,
+          "document": "KB23",
+          "score": 0.2099
+        },
+        {
+          "rank": 10,
+          "document": "KB36",
+          "score": 0.1467
+        },
+        {
+          "rank": 11,
+          "document": "KB27",
+          "score": 0.1455
+        },
+        {
+          "rank": 12,
+          "document": "KB07",
+          "score": 0.1449
+        },
+        {
+          "rank": 13,
+          "document": "KB19",
+          "score": 0.1371
+        },
+        {
+          "rank": 14,
+          "document": "KB16",
+          "score": 0.1298
+        },
+        {
+          "rank": 15,
+          "document": "KB29",
+          "score": 0.1277
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "f1@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.9675,
+        "average_precision": 0.9167
+      },
+      "confusion": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 0,
+        "tn": 35
+      }
+    },
+    {
+      "query_id": "Q5",
+      "query": "cooling plant getting too hot",
+      "relevant": [
+        "KB17",
+        "KB33"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB21",
+          "score": 0.7118
+        },
+        {
+          "rank": 2,
+          "document": "KB40",
+          "score": 0.4952
+        },
+        {
+          "rank": 3,
+          "document": "KB09",
+          "score": 0.4782
+        },
+        {
+          "rank": 4,
+          "document": "KB23",
+          "score": 0.4469
+        },
+        {
+          "rank": 5,
+          "document": "KB16",
+          "score": 0.3929
+        },
+        {
+          "rank": 6,
+          "document": "KB08",
+          "score": 0.3713
+        },
+        {
+          "rank": 7,
+          "document": "KB39",
+          "score": 0.3545
+        },
+        {
+          "rank": 8,
+          "document": "KB01",
+          "score": 0.3452
+        },
+        {
+          "rank": 9,
+          "document": "KB26",
+          "score": 0.3426
+        },
+        {
+          "rank": 10,
+          "document": "KB17",
+          "score": 0.3307
+        },
+        {
+          "rank": 11,
+          "document": "KB14",
+          "score": 0.2662
+        },
+        {
+          "rank": 12,
+          "document": "KB02",
+          "score": 0.2104
+        },
+        {
+          "rank": 13,
+          "document": "KB33",
+          "score": 0.2095
+        },
+        {
+          "rank": 14,
+          "document": "KB36",
+          "score": 0.1838
+        },
+        {
+          "rank": 15,
+          "document": "KB27",
+          "score": 0.1406
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "f1@5": 0.0,
+        "mrr": 0.1,
+        "ndcg@5": 0.0,
+        "average_precision": 0.1269
+      },
+      "confusion": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 2,
+        "tn": 33
+      }
+    },
+    {
+      "query_id": "Q6",
+      "query": "machine switching on and off too often",
+      "relevant": [
+        "KB12",
+        "KB13",
+        "KB29"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB13",
+          "score": 0.9277
+        },
+        {
+          "rank": 2,
+          "document": "KB12",
+          "score": 0.4061
+        },
+        {
+          "rank": 3,
+          "document": "KB29",
+          "score": 0.3354
+        },
+        {
+          "rank": 4,
+          "document": "KB08",
+          "score": 0.3203
+        },
+        {
+          "rank": 5,
+          "document": "KB01",
+          "score": 0.2901
+        },
+        {
+          "rank": 6,
+          "document": "KB36",
+          "score": 0.2713
+        },
+        {
+          "rank": 7,
+          "document": "KB21",
+          "score": 0.2682
+        },
+        {
+          "rank": 8,
+          "document": "KB40",
+          "score": 0.2405
+        },
+        {
+          "rank": 9,
+          "document": "KB27",
+          "score": 0.2136
+        },
+        {
+          "rank": 10,
+          "document": "KB23",
+          "score": 0.2112
+        },
+        {
+          "rank": 11,
+          "document": "KB14",
+          "score": 0.2098
+        },
+        {
+          "rank": 12,
+          "document": "KB05",
+          "score": 0.1779
+        },
+        {
+          "rank": 13,
+          "document": "KB38",
+          "score": 0.1648
+        },
+        {
+          "rank": 14,
+          "document": "KB25",
+          "score": 0.1643
+        },
+        {
+          "rank": 15,
+          "document": "KB02",
+          "score": 0.1421
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "f1@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "average_precision": 1.0
+      },
+      "confusion": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 0,
+        "tn": 35
+      }
+    },
+    {
+      "query_id": "Q7",
+      "query": "reactive power penalty",
+      "relevant": [
+        "KB15",
+        "KB30"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB15",
+          "score": 0.9867
+        },
+        {
+          "rank": 2,
+          "document": "KB30",
+          "score": 0.2135
+        },
+        {
+          "rank": 3,
+          "document": "KB11",
+          "score": 0.1287
+        },
+        {
+          "rank": 4,
+          "document": "KB10",
+          "score": 0.12
+        },
+        {
+          "rank": 5,
+          "document": "KB28",
+          "score": 0.0855
+        },
+        {
+          "rank": 6,
+          "document": "KB32",
+          "score": 0.0839
+        },
+        {
+          "rank": 7,
+          "document": "KB17",
+          "score": 0.083
+        },
+        {
+          "rank": 8,
+          "document": "KB06",
+          "score": 0.0772
+        },
+        {
+          "rank": 9,
+          "document": "KB02",
+          "score": 0.0732
+        },
+        {
+          "rank": 10,
+          "document": "KB34",
+          "score": 0.067
+        },
+        {
+          "rank": 11,
+          "document": "KB07",
+          "score": 0.0656
+        },
+        {
+          "rank": 12,
+          "document": "KB05",
+          "score": 0.0592
+        },
+        {
+          "rank": 13,
+          "document": "KB01",
+          "score": 0.0583
+        },
+        {
+          "rank": 14,
+          "document": "KB37",
+          "score": 0.0532
+        },
+        {
+          "rank": 15,
+          "document": "KB36",
+          "score": 0.0527
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 1.0,
+        "f1@5": 0.5714,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "average_precision": 1.0
+      },
+      "confusion": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 0,
+        "tn": 35
+      }
+    },
+    {
+      "query_id": "Q8",
+      "query": "cold room warming up",
+      "relevant": [
+        "KB16",
+        "KB18",
+        "KB19"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB19",
+          "score": 0.7873
+        },
+        {
+          "rank": 2,
+          "document": "KB18",
+          "score": 0.5165
+        },
+        {
+          "rank": 3,
+          "document": "KB35",
+          "score": 0.4509
+        },
+        {
+          "rank": 4,
+          "document": "KB16",
+          "score": 0.3322
+        },
+        {
+          "rank": 5,
+          "document": "KB01",
+          "score": 0.2944
+        },
+        {
+          "rank": 6,
+          "document": "KB33",
+          "score": 0.2921
+        },
+        {
+          "rank": 7,
+          "document": "KB22",
+          "score": 0.2203
+        },
+        {
+          "rank": 8,
+          "document": "KB21",
+          "score": 0.1946
+        },
+        {
+          "rank": 9,
+          "document": "KB27",
+          "score": 0.1081
+        },
+        {
+          "rank": 10,
+          "document": "KB17",
+          "score": 0.1046
+        },
+        {
+          "rank": 11,
+          "document": "KB20",
+          "score": 0.0955
+        },
+        {
+          "rank": 12,
+          "document": "KB32",
+          "score": 0.0916
+        },
+        {
+          "rank": 13,
+          "document": "KB39",
+          "score": 0.0892
+        },
+        {
+          "rank": 14,
+          "document": "KB08",
+          "score": 0.0882
+        },
+        {
+          "rank": 15,
+          "document": "KB11",
+          "score": 0.0802
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "f1@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.9675,
+        "average_precision": 0.9167
+      },
+      "confusion": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 0,
+        "tn": 35
+      }
+    },
+    {
+      "query_id": "Q9",
+      "query": "uneven current across the three phases",
+      "relevant": [
+        "KB11",
+        "KB22",
+        "KB37"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB37",
+          "score": 0.8419
+        },
+        {
+          "rank": 2,
+          "document": "KB11",
+          "score": 0.4351
+        },
+        {
+          "rank": 3,
+          "document": "KB10",
+          "score": 0.392
+        },
+        {
+          "rank": 4,
+          "document": "KB04",
+          "score": 0.369
+        },
+        {
+          "rank": 5,
+          "document": "KB22",
+          "score": 0.3584
+        },
+        {
+          "rank": 6,
+          "document": "KB07",
+          "score": 0.3465
+        },
+        {
+          "rank": 7,
+          "document": "KB39",
+          "score": 0.2216
+        },
+        {
+          "rank": 8,
+          "document": "KB24",
+          "score": 0.2039
+        },
+        {
+          "rank": 9,
+          "document": "KB31",
+          "score": 0.1527
+        },
+        {
+          "rank": 10,
+          "document": "KB34",
+          "score": 0.1523
+        },
+        {
+          "rank": 11,
+          "document": "KB13",
+          "score": 0.1354
+        },
+        {
+          "rank": 12,
+          "document": "KB26",
+          "score": 0.1279
+        },
+        {
+          "rank": 13,
+          "document": "KB27",
+          "score": 0.1274
+        },
+        {
+          "rank": 14,
+          "document": "KB06",
+          "score": 0.1169
+        },
+        {
+          "rank": 15,
+          "document": "KB36",
+          "score": 0.1051
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.6,
+        "recall@5": 1.0,
+        "f1@5": 0.75,
+        "mrr": 1.0,
+        "ndcg@5": 0.9469,
+        "average_precision": 0.8667
+      },
+      "confusion": {
+        "tp": 3,
+        "fp": 2,
+        "fn": 0,
+        "tn": 35
+      }
+    },
+    {
+      "query_id": "Q10",
+      "query": "dirty heat exchanger surfaces",
+      "relevant": [
+        "KB17",
+        "KB20"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB35",
+          "score": 0.9865
+        },
+        {
+          "rank": 2,
+          "document": "KB32",
+          "score": 0.2309
+        },
+        {
+          "rank": 3,
+          "document": "KB18",
+          "score": 0.1982
+        },
+        {
+          "rank": 4,
+          "document": "KB37",
+          "score": 0.1648
+        },
+        {
+          "rank": 5,
+          "document": "KB12",
+          "score": 0.1637
+        },
+        {
+          "rank": 6,
+          "document": "KB33",
+          "score": 0.1447
+        },
+        {
+          "rank": 7,
+          "document": "KB22",
+          "score": 0.0681
+        },
+        {
+          "rank": 8,
+          "document": "KB20",
+          "score": 0.0596
+        },
+        {
+          "rank": 9,
+          "document": "KB08",
+          "score": 0.0596
+        },
+        {
+          "rank": 10,
+          "document": "KB13",
+          "score": 0.0458
+        },
+        {
+          "rank": 11,
+          "document": "KB19",
+          "score": 0.0457
+        },
+        {
+          "rank": 12,
+          "document": "KB39",
+          "score": 0.0424
+        },
+        {
+          "rank": 13,
+          "document": "KB11",
+          "score": 0.0408
+        },
+        {
+          "rank": 14,
+          "document": "KB09",
+          "score": 0.0371
+        },
+        {
+          "rank": 15,
+          "document": "KB16",
+          "score": 0.0315
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "f1@5": 0.0,
+        "mrr": 0.125,
+        "ndcg@5": 0.0,
+        "average_precision": 0.125
+      },
+      "confusion": {
+        "tp": 0,
+        "fp": 5,
+        "fn": 2,
+        "tn": 33
+      }
+    },
+    {
+      "query_id": "Q11",
+      "query": "motor running hot",
+      "relevant": [
+        "KB05",
+        "KB12",
+        "KB29",
+        "KB39"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB02",
+          "score": 0.5182
+        },
+        {
+          "rank": 2,
+          "document": "KB01",
+          "score": 0.5135
+        },
+        {
+          "rank": 3,
+          "document": "KB05",
+          "score": 0.5007
+        },
+        {
+          "rank": 4,
+          "document": "KB23",
+          "score": 0.4486
+        },
+        {
+          "rank": 5,
+          "document": "KB39",
+          "score": 0.4402
+        },
+        {
+          "rank": 6,
+          "document": "KB06",
+          "score": 0.4159
+        },
+        {
+          "rank": 7,
+          "document": "KB12",
+          "score": 0.3938
+        },
+        {
+          "rank": 8,
+          "document": "KB24",
+          "score": 0.3914
+        },
+        {
+          "rank": 9,
+          "document": "KB14",
+          "score": 0.3567
+        },
+        {
+          "rank": 10,
+          "document": "KB10",
+          "score": 0.3562
+        },
+        {
+          "rank": 11,
+          "document": "KB34",
+          "score": 0.3473
+        },
+        {
+          "rank": 12,
+          "document": "KB28",
+          "score": 0.3449
+        },
+        {
+          "rank": 13,
+          "document": "KB25",
+          "score": 0.3294
+        },
+        {
+          "rank": 14,
+          "document": "KB08",
+          "score": 0.3078
+        },
+        {
+          "rank": 15,
+          "document": "KB29",
+          "score": 0.266
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 0.5,
+        "f1@5": 0.4444,
+        "mrr": 0.3333,
+        "ndcg@5": 0.3462,
+        "average_precision": 0.3571
+      },
+      "confusion": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 2,
+        "tn": 33
+      }
+    },
+    {
+      "query_id": "Q12",
+      "query": "hydraulic press energy saving",
+      "relevant": [
+        "KB24",
+        "KB25"
+      ],
+      "retrieved": 40,
+      "ranking": [
+        {
+          "rank": 1,
+          "document": "KB09",
+          "score": 0.6606
+        },
+        {
+          "rank": 2,
+          "document": "KB25",
+          "score": 0.6153
+        },
+        {
+          "rank": 3,
+          "document": "KB24",
+          "score": 0.4629
+        },
+        {
+          "rank": 4,
+          "document": "KB01",
+          "score": 0.2549
+        },
+        {
+          "rank": 5,
+          "document": "KB36",
+          "score": 0.2406
+        },
+        {
+          "rank": 6,
+          "document": "KB14",
+          "score": 0.2219
+        },
+        {
+          "rank": 7,
+          "document": "KB15",
+          "score": 0.171
+        },
+        {
+          "rank": 8,
+          "document": "KB08",
+          "score": 0.1638
+        },
+        {
+          "rank": 9,
+          "document": "KB40",
+          "score": 0.1412
+        },
+        {
+          "rank": 10,
+          "document": "KB02",
+          "score": 0.1369
+        },
+        {
+          "rank": 11,
+          "document": "KB21",
+          "score": 0.1347
+        },
+        {
+          "rank": 12,
+          "document": "KB23",
+          "score": 0.0905
+        },
+        {
+          "rank": 13,
+          "document": "KB27",
+          "score": 0.0812
+        },
+        {
+          "rank": 14,
+          "document": "KB12",
+          "score": 0.0793
+        },
+        {
+          "rank": 15,
+          "document": "KB32",
+          "score": 0.0788
+        }
+      ],
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 1.0,
+        "f1@5": 0.5714,
+        "mrr": 0.5,
+        "ndcg@5": 0.6934,
+        "average_precision": 0.5833
+      },
+      "confusion": {
+        "tp": 2,
+        "fp": 3,
+        "fn": 0,
+        "tn": 35
+      }
+    }
+  ],
+  "mean": {
+    "precision@5": 0.45,
+    "recall@5": 0.6996,
+    "f1@5": 0.5323,
+    "mrr": 0.7549,
+    "ndcg@5": 0.6791,
+    "average_precision": 0.682
+  },
+  "confusion": {
+    "tp": 27,
+    "fp": 33,
+    "fn": 12,
+    "tn": 408
+  },
+  "confusion_scores": {
+    "precision": 0.45,
+    "recall": 0.6923,
+    "f1": 0.5455,
+    "accuracy": 0.9062,
+    "specificity": 0.9252
+  }
+}

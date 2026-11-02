@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VoltMize Semantic Search</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#results">Skip to results</a>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="Ranking controls">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>
+      </span>
+      <div><strong>VoltMize</strong><span>SEMANTIC SEARCH</span></div>
+    </div>
+
+    <form id="controls" class="filters" autocomplete="off">
+      <p class="eyebrow">Ranking model</p>
+      <div class="model-list" role="radiogroup" aria-label="Ranking model">
+        <label><input type="radio" name="model" value="lsi" checked>
+          <span><b>LSI</b><small>cosine in k concept dimensions (SVD)</small></span></label>
+        <label><input type="radio" name="model" value="hybrid">
+          <span><b>Hybrid</b><small>½ LSI + ½ exact-word VSM</small></span></label>
+        <label><input type="radio" name="model" value="gvsm">
+          <span><b>GVSM</b><small>cosine with correlated term axes</small></span></label>
+        <label><input type="radio" name="model" value="vsm">
+          <span><b>VSM</b><small>TF-IDF cosine, exact words only</small></span></label>
+      </div>
+
+      <p class="eyebrow">Concepts kept k <output id="k-value">14</output></p>
+      <input id="k" name="k" type="range" min="1" max="40" step="1" value="14" aria-describedby="k-help">
+      <p id="k-help" class="hint"><span id="energy">50%</span> of the matrix's energy Σσ² kept. Fewer concepts
+        blur topics together; all 40 give back plain VSM.</p>
+
+      <p class="eyebrow">Show top</p>
+      <div class="segmented three" role="radiogroup" aria-label="Number of results">
+        <label><input type="radio" name="top" value="5"><span>5</span></label>
+        <label><input type="radio" name="top" value="10" checked><span>10</span></label>
+        <label><input type="radio" name="top" value="20"><span>20</span></label>
+      </div>
+
+      <p class="eyebrow">Minimum similarity <output id="min-value">0.10</output></p>
+      <input id="min" name="min" type="range" min="0" max="0.6" step="0.05" value="0.1">
+
+      <label class="switch">
+        <input type="checkbox" name="compare" checked>
+        <span>Compare with exact-word VSM</span>
+      </label>
+      <button type="button" id="reset" class="reset">Reset</button>
+    </form>
+  </aside>
+
+  <main class="main">
+    <header class="search-head">
+      <form id="search-form" class="searchbar" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" name="q" type="search" spellcheck="false"
+               placeholder="Describe the problem in your own words — try  equipment left on after the factory closes"
+               aria-label="Search query">
+        <kbd>/</kbd>
+      </form>
+      <div class="examples" id="examples" aria-label="Example queries"></div>
+    </header>
+
+    <section class="intro" id="intro">
+      <div>
+        <p class="kicker">Week 7 · Algebraic retrieval</p>
+        <h1>Rank by meaning, not by the exact words someone happened to type.</h1>
+        <p>Every document is a column of a TF-IDF document-term matrix. Your query becomes a vector in the
+          same space and every document is ranked by the cosine of the angle between them. LSI first
+          compresses the matrix into a few concepts with SVD, so <em>overnight</em>, <em>Sunday</em> and
+          <em>after hours</em> point the same way even though they are different words.</p>
+      </div>
+      <dl class="formula-card">
+        <div><dt>Matrix</dt><dd>A = terms × documents</dd></div>
+        <div><dt>SVD</dt><dd>A ≈ U<sub>k</sub> Σ<sub>k</sub> V<sub>k</sub><sup>T</sup></dd></div>
+        <div><dt>Query</dt><dd>q̂ = U<sub>k</sub><sup>T</sup> q</dd></div>
+        <div><dt>Cosine</dt><dd>q̂·d̂ / (‖q̂‖ ‖d̂‖)</dd></div>
+      </dl>
+    </section>
+
+    <section class="status" id="status" aria-live="polite" hidden>
+      <div class="vector-row">
+        <span class="row-label">Query vector q</span>
+        <div id="query-terms" class="term-chips"></div>
+      </div>
+      <div class="vector-row">
+        <span class="row-label">Model reads it as</span>
+        <div id="expanded" class="term-chips"></div>
+      </div>
+      <div class="vector-row" id="concept-row">
+        <span class="row-label">Query concepts</span>
+        <div id="query-concepts" class="concept-chips"></div>
+      </div>
+      <p class="counts" id="counts"></p>
+    </section>
+
+    <div class="error" id="error" role="alert" hidden></div>
+
+    <div class="layout">
+      <div class="results-col">
+        <section id="results" class="results" aria-label="Ranked results"></section>
+        <details class="matrix-panel" id="matrix-panel" hidden>
+          <summary>See the document-term matrix for this query</summary>
+          <p class="hint">Rows are the query's terms plus the strongest related terms the model added; columns are
+            the top documents. Cells are TF-IDF weights from A. The last two columns are the typed query vector q and
+            the query as the model reads it.</p>
+          <div class="matrix-wrap"><table id="matrix" class="matrix"></table></div>
+        </details>
+      </div>
+      <aside class="legend" aria-label="Legend and concepts">
+        <h2>Highlights</h2>
+        <ul class="kinds">
+          <li><mark class="m-exact">exact</mark> a word you typed</li>
+          <li><mark class="m-semantic">related</mark> a word the model linked to your query</li>
+        </ul>
+        <h2>Concepts the model learned <small id="concept-k"></small></h2>
+        <ol id="concepts" class="concepts"></ol>
+        <p class="hint">Each concept is a column of U: words that occur in the same documents load on it together.
+          No thesaurus was given — these were found by the SVD.</p>
+      </aside>
+    </div>
+  </main>
+</div>
+<template id="result-template">
+  <article class="result">
+    <div class="score">
+      <div class="ring"><span class="value"></span></div>
+      <span class="rank"></span>
+    </div>
+    <div class="body">
+      <div class="meta-top">
+        <span class="type"></span>
+        <span class="vsm-flag"></span>
+      </div>
+      <h3 class="title"></h3>
+      <p class="meta"></p>
+      <p class="snippet"></p>
+      <details class="why">
+        <summary>Why this score?</summary>
+        <p class="formula-line"></p>
+        <div class="explain-grid">
+          <div class="words-box">
+            <h4>Words that carried the score</h4>
+            <div class="table-wrap"><table class="contrib"></table></div>
+          </div>
+          <div class="concepts-box">
+            <h4>Shared concepts</h4>
+            <div class="concept-bars"></div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </article>
+</template>
+<script src="app.js"></script>
+</body>
+</html>

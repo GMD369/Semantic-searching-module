@@ -1,0 +1,254 @@
+Collection: 40 documents, 513 index terms -> document-term matrix A is 513 x 40
+LSI keeps k = 14 concepts: the smallest k whose singular values keep 50% of sum(s^2) (actual 50.1%).
+Judged queries: 12, written before any model was run.
+
+==============================================================================
+LECTURE EXAMPLES REPRODUCED WITH THE MODULE'S OWN CODE
+==============================================================================
+Slides 6-8  Q = (1, 1), D1 = (5, 3)
+            Q.D = 8   |Q| = 1.414 (sqrt 2)   |D| = 5.831 (sqrt 34)
+            cos = 8 / (sqrt 2 x sqrt 34) = 0.970   -> highly relevant
+Slides 11-12  A = [[1,1,0],[1,0,1],[0,1,1]]  (terms x documents)
+            singular values  = [2.0, 1.0, 1.0]
+            U S V^T rebuilds A exactly: True
+            rank-2 approximation A_2 =
+               [1.0, 0.5, 0.5]
+               [1.0, 0.5, 0.5]
+               [0.0, 1.0, 1.0]
+            cos(D1, D2) in term space = 0.5, in 2-concept space = 0.58
+
+==============================================================================
+LSI MATRICES  (A = U S V^T, full CSVs in results/matrices/)
+==============================================================================
+A    document-term matrix    513 terms x 40 documents
+U_k  term-concept matrix     513 terms x 14 concepts
+S_k  singular values         14 of 40: 1.626, 1.357, 1.303, 1.218, 1.208, 1.180, 1.162, 1.127, 1.118, 1.100, 1.091, 1.056, 1.039, 1.018
+V_k^T concept-document       14 concepts x 40 documents
+U_k^T A = S_k V_k^T equal:   True
+KB08 in concept space (first 5 of 14): 0.288, 0.056, 0.162, 0.174, -0.044
+
+==============================================================================
+VSM (TF-IDF)  (cut-off 5)
+==============================================================================
+Q1   equipment left on after the factory closes
+     top 5: KB08* 0.17, KB13 0.12, KB27* 0.06, KB16 0.06, KB01* 0.05
+     P@5 0.60  R@5 0.43  nDCG@5 0.64  AP 0.32  (retrieved 5)
+Q2   rotating machine mechanical wear
+     top 5: KB06* 0.20, KB05* 0.13, KB10* 0.09, KB13 0.08, KB38 0.06
+     P@5 0.60  R@5 0.60  nDCG@5 0.72  AP 0.73  (retrieved 12)
+Q3   shift heavy loads to cheaper hours
+     top 5: KB21* 0.25, KB27 0.12, KB36 0.10, KB01 0.09, KB02 0.08
+     P@5 0.20  R@5 0.33  nDCG@5 0.47  AP 0.54  (retrieved 22)
+Q4   compressed air wastage
+     top 5: KB26* 0.29, KB03* 0.24, KB01 0.18, KB04* 0.15, KB25 0.10
+     P@5 0.60  R@5 1.00  nDCG@5 0.97  AP 0.92  (retrieved 10)
+Q5   cooling plant getting too hot
+     top 5: KB21 0.21, KB39 0.11, KB40 0.11, KB23 0.11, KB09 0.10
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.06  (retrieved 10)
+Q6   machine switching on and off too often
+     top 5: KB13* 0.29, KB08 0.11, KB12* 0.10, KB29* 0.08, KB01 0.08
+     P@5 0.60  R@5 1.00  nDCG@5 0.91  AP 0.81  (retrieved 17)
+Q7   reactive power penalty
+     top 5: KB15* 0.42, KB30* 0.03, KB32 0.02, KB17 0.02, KB10 0.02
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 13)
+Q8   cold room warming up
+     top 5: KB19* 0.24, KB18* 0.14, KB35 0.12, KB33 0.09, KB01 0.08
+     P@5 0.40  R@5 0.67  nDCG@5 0.77  AP 0.83  (retrieved 8)
+Q9   uneven current across the three phases
+     top 5: KB37* 0.38, KB11* 0.17, KB22* 0.12, KB10 0.10, KB04 0.09
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 12)
+Q10  dirty heat exchanger surfaces
+     top 5: KB35 0.31, KB37 0.06, KB33 0.05, KB18 0.05, KB32 0.05
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.00  (retrieved 6)
+Q11  motor running hot
+     top 5: KB02 0.13, KB39* 0.13, KB01 0.12, KB23 0.12, KB05* 0.12
+     P@5 0.40  R@5 0.50  nDCG@5 0.40  AP 0.38  (retrieved 18)
+Q12  hydraulic press energy saving
+     top 5: KB25* 0.26, KB24* 0.23, KB09 0.23, KB36 0.05, KB14 0.04
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 7)
+     * = judged relevant
+
+==============================================================================
+GVSM  (cut-off 5)
+==============================================================================
+Q1   equipment left on after the factory closes
+     top 5: KB08* 0.77, KB13 0.60, KB01* 0.32, KB27* 0.29, KB16 0.26
+     P@5 0.60  R@5 0.43  nDCG@5 0.65  AP 0.72  (retrieved 40)
+Q2   rotating machine mechanical wear
+     top 5: KB06* 0.88, KB05* 0.51, KB28* 0.36, KB10* 0.34, KB13 0.26
+     P@5 0.80  R@5 0.80  nDCG@5 0.87  AP 0.88  (retrieved 40)
+Q3   shift heavy loads to cheaper hours
+     top 5: KB21* 0.90, KB27 0.46, KB40* 0.42, KB36 0.42, KB01 0.38
+     P@5 0.40  R@5 0.67  nDCG@5 0.70  AP 0.70  (retrieved 40)
+Q4   compressed air wastage
+     top 5: KB26* 0.75, KB03* 0.65, KB01 0.57, KB04* 0.52, KB08 0.37
+     P@5 0.60  R@5 1.00  nDCG@5 0.97  AP 0.92  (retrieved 40)
+Q5   cooling plant getting too hot
+     top 5: KB21 0.71, KB40 0.50, KB09 0.48, KB23 0.45, KB16 0.39
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.13  (retrieved 40)
+Q6   machine switching on and off too often
+     top 5: KB13* 0.93, KB12* 0.41, KB29* 0.34, KB08 0.32, KB01 0.29
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 40)
+Q7   reactive power penalty
+     top 5: KB15* 0.99, KB30* 0.21, KB11 0.13, KB10 0.12, KB28 0.09
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 40)
+Q8   cold room warming up
+     top 5: KB19* 0.79, KB18* 0.52, KB35 0.45, KB16* 0.33, KB01 0.29
+     P@5 0.60  R@5 1.00  nDCG@5 0.97  AP 0.92  (retrieved 40)
+Q9   uneven current across the three phases
+     top 5: KB37* 0.84, KB11* 0.44, KB10 0.39, KB04 0.37, KB22* 0.36
+     P@5 0.60  R@5 1.00  nDCG@5 0.95  AP 0.87  (retrieved 40)
+Q10  dirty heat exchanger surfaces
+     top 5: KB35 0.99, KB32 0.23, KB18 0.20, KB37 0.16, KB12 0.16
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.12  (retrieved 40)
+Q11  motor running hot
+     top 5: KB02 0.52, KB01 0.51, KB05* 0.50, KB23 0.45, KB39* 0.44
+     P@5 0.40  R@5 0.50  nDCG@5 0.35  AP 0.36  (retrieved 40)
+Q12  hydraulic press energy saving
+     top 5: KB09 0.66, KB25* 0.62, KB24* 0.46, KB01 0.25, KB36 0.24
+     P@5 0.40  R@5 1.00  nDCG@5 0.69  AP 0.58  (retrieved 40)
+     * = judged relevant
+
+==============================================================================
+LSI  (cut-off 5, k = 14 concepts)
+==============================================================================
+Q1   equipment left on after the factory closes
+     top 5: KB08* 0.82, KB01* 0.71, KB02* 0.61, KB36* 0.60, KB09* 0.59
+     P@5 1.00  R@5 0.71  nDCG@5 1.00  AP 0.91  (retrieved 25)
+Q2   rotating machine mechanical wear
+     top 5: KB05* 0.93, KB28* 0.92, KB06* 0.82, KB07 0.69, KB10* 0.49
+     P@5 0.80  R@5 0.80  nDCG@5 0.85  AP 0.83  (retrieved 26)
+Q3   shift heavy loads to cheaper hours
+     top 5: KB21* 0.74, KB36 0.73, KB27 0.72, KB01 0.64, KB02 0.59
+     P@5 0.20  R@5 0.33  nDCG@5 0.47  AP 0.59  (retrieved 31)
+Q4   compressed air wastage
+     top 5: KB03* 0.92, KB04* 0.91, KB26* 0.91, KB02 0.60, KB23 0.40
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 25)
+Q5   cooling plant getting too hot
+     top 5: KB21 0.80, KB40 0.65, KB14 0.57, KB02 0.56, KB09 0.51
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.15  (retrieved 31)
+Q6   machine switching on and off too often
+     top 5: KB13* 0.91, KB12* 0.83, KB29* 0.79, KB36 0.44, KB01 0.41
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 29)
+Q7   reactive power penalty
+     top 5: KB15* 0.99, KB30* 0.76, KB10 0.74, KB34 0.37, KB11 0.23
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 28)
+Q8   cold room warming up
+     top 5: KB16* 0.88, KB19* 0.85, KB18* 0.64, KB35 0.39, KB22 0.36
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 26)
+Q9   uneven current across the three phases
+     top 5: KB37* 0.98, KB11* 0.93, KB22* 0.71, KB38 0.32, KB39 0.28
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 31)
+Q10  dirty heat exchanger surfaces
+     top 5: KB35 0.99, KB32 0.92, KB18 0.43, KB07 0.37, KB12 0.24
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.06  (retrieved 23)
+Q11  motor running hot
+     top 5: KB06 0.71, KB05* 0.63, KB24 0.63, KB07 0.62, KB28 0.60
+     P@5 0.20  R@5 0.25  nDCG@5 0.25  AP 0.29  (retrieved 38)
+Q12  hydraulic press energy saving
+     top 5: KB25* 0.88, KB24* 0.87, KB08 0.46, KB01 0.38, KB02 0.32
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 27)
+     * = judged relevant
+
+==============================================================================
+HYBRID  (cut-off 5, k = 14 concepts)
+==============================================================================
+Q1   equipment left on after the factory closes
+     top 5: KB08* 0.49, KB01* 0.38, KB13 0.34, KB02* 0.30, KB36* 0.30
+     P@5 0.80  R@5 0.57  nDCG@5 0.83  AP 0.84  (retrieved 25)
+Q2   rotating machine mechanical wear
+     top 5: KB05* 0.53, KB06* 0.51, KB28* 0.49, KB07 0.35, KB10* 0.29
+     P@5 0.80  R@5 0.80  nDCG@5 0.85  AP 0.83  (retrieved 26)
+Q3   shift heavy loads to cheaper hours
+     top 5: KB21* 0.49, KB27 0.42, KB36 0.42, KB01 0.36, KB02 0.34
+     P@5 0.20  R@5 0.33  nDCG@5 0.47  AP 0.59  (retrieved 31)
+Q4   compressed air wastage
+     top 5: KB26* 0.60, KB03* 0.58, KB04* 0.53, KB02 0.33, KB01 0.27
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 25)
+Q5   cooling plant getting too hot
+     top 5: KB21 0.50, KB40 0.38, KB09 0.31, KB14 0.28, KB02 0.28
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.13  (retrieved 31)
+Q6   machine switching on and off too often
+     top 5: KB13* 0.60, KB12* 0.47, KB29* 0.44, KB01 0.25, KB36 0.24
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 30)
+Q7   reactive power penalty
+     top 5: KB15* 0.71, KB30* 0.39, KB10 0.38, KB34 0.19, KB11 0.12
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 28)
+Q8   cold room warming up
+     top 5: KB19* 0.54, KB16* 0.47, KB18* 0.39, KB35 0.25, KB22 0.20
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 26)
+Q9   uneven current across the three phases
+     top 5: KB37* 0.68, KB11* 0.55, KB22* 0.42, KB10 0.18, KB38 0.16
+     P@5 0.60  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 32)
+Q10  dirty heat exchanger surfaces
+     top 5: KB35 0.65, KB32 0.49, KB18 0.24, KB07 0.19, KB12 0.15
+     P@5 0.00  R@5 0.00  nDCG@5 0.00  AP 0.05  (retrieved 23)
+Q11  motor running hot
+     top 5: KB06 0.40, KB05* 0.38, KB24 0.37, KB01 0.35, KB28 0.34
+     P@5 0.20  R@5 0.25  nDCG@5 0.25  AP 0.30  (retrieved 38)
+Q12  hydraulic press energy saving
+     top 5: KB25* 0.57, KB24* 0.55, KB09 0.27, KB08 0.23, KB01 0.21
+     P@5 0.40  R@5 1.00  nDCG@5 1.00  AP 1.00  (retrieved 27)
+     * = judged relevant
+
+==============================================================================
+MEAN OVER 12 QUERIES
+==============================================================================
+metric              VSM (TF-IDF)          GVSM           LSI        Hybrid
+precision@5                0.400         0.450         0.450         0.433
+recall@5                   0.627         0.700         0.675         0.663
+f1@5                       0.474         0.532         0.521         0.507
+mrr                        0.802         0.755         0.811         0.808
+ndcg@5                     0.656         0.679         0.714         0.700
+average_precision          0.633         0.682         0.735         0.728
+
+==============================================================================
+CONFUSION MATRICES AT CUT-OFF 5  (summed over 12 queries x 40 documents = 480 pairs)
+==============================================================================
+Top 5 = retrieved, everything else = not retrieved.
+
+VSM (TF-IDF)
+                     relevant   not relevant
+   retrieved (top 5)  TP   24      FP   36
+   not retrieved      FN   15      TN  405
+   precision 0.400  recall 0.615  F1 0.485  accuracy 0.894  specificity 0.918
+
+GVSM
+                     relevant   not relevant
+   retrieved (top 5)  TP   27      FP   33
+   not retrieved      FN   12      TN  408
+   precision 0.450  recall 0.692  F1 0.545  accuracy 0.906  specificity 0.925
+
+LSI
+                     relevant   not relevant
+   retrieved (top 5)  TP   27      FP   33
+   not retrieved      FN   12      TN  408
+   precision 0.450  recall 0.692  F1 0.545  accuracy 0.906  specificity 0.925
+
+Hybrid
+                     relevant   not relevant
+   retrieved (top 5)  TP   26      FP   34
+   not retrieved      FN   13      TN  407
+   precision 0.433  recall 0.667  F1 0.525  accuracy 0.902  specificity 0.923
+
+Accuracy and specificity look high for every model because most pairs are true negatives
+(about 37 of 40 documents are irrelevant to each query). Compare models on TP, FN, precision and recall.
+
+LSI vs VSM on nDCG@5, query by query
+  better   5  Q1, Q2, Q4, Q6, Q8
+  same     6  Q3, Q5, Q7, Q9, Q10, Q12
+  worse    1  Q11
+
+Relevant documents in LSI's top 5 that share NO word with the query (VSM score 0): 3
+  Q1:KB02, Q1:KB36, Q1:KB09
+
+LSI nDCG@5 as k changes (sensitivity only; k was not tuned on these numbers)
+  k=1:0.12  k=2:0.24  k=4:0.47  k=6:0.62  k=8:0.66  k=10:0.72  k=12:0.70  k=14:0.71  k=20:0.72  k=25:0.73  k=30:0.72  k=35:0.70  k=40:0.66
+
+Semantic neighbours learned by LSI (no thesaurus was given)
+  overnight    -> chiller 0.95, kept 0.92, last 0.91, idle 0.89, bypassed 0.88
+  leak         -> couplings 0.95, headers 0.95, steadily 0.94, decay 0.94, distribution 0.94
+  peak         -> tariff 1.00, maximum 1.00, industrial 0.99, flexible 0.99, charge 0.99
+  overheating  -> tripping 0.95, ventilation 0.94, screw 0.94, discharge 0.94, fouled 0.94
+  imbalance    -> phase 0.98, faulty 0.98, transformers 0.98, neutral 0.97, single 0.95
+  bearing      -> vibration 0.99, sister 0.99, advanced 0.97, spindle 0.97, seized 0.97

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "KB01", "type": "Anomaly incident", "severity": "high", "date": "2026-03-15",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT7",
+    "title": "Compressor C1 left running overnight after Saturday shift",
+    "tags": ["compressor", "overnight", "idle running", "energy waste"],
+    "text": "On Saturday 14 March the fixed-speed compressor C1 kept running through the night after the second shift ended at 22:00. Meter MT7 showed unloaded compressor power of about 30 kW for eight hours while no looms were operating. The compressor-room total on MT3 returned to normal on Sunday morning. Estimated waste was 240 kWh. Operators had switched off the looms but not the air plant."
+  },
+  {
+    "id": "KB02", "type": "Diagnostic playbook", "severity": "info", "date": "2026-02-10",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT3",
+    "title": "Playbook: compressor running after shift end",
+    "tags": ["compressor", "shutdown", "night", "interlock"],
+    "text": "Use this procedure when compressor power stays high after production stops. Confirm that loom load on MT2 has dropped, then check MT7 and MT8 for loaded or unloaded running. An unloaded compressor running at night usually means a missed shutdown; a loaded compressor at night points to an air leak or a process that is still consuming air. Add an automatic stop interlock linked to the shift schedule."
+  },
+  {
+    "id": "KB03", "type": "Anomaly incident", "severity": "medium", "date": "2026-05-02",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT7",
+    "title": "Compressed air leak growth in weaving hall headers",
+    "tags": ["compressed air", "leak", "duty cycle"],
+    "text": "Leakage in the compressed-air distribution network grew steadily over six weeks. The base compressor's loaded duty cycle on MT7 rose from 55% to 71% while loom production stayed flat. Weekend pressure-decay tests confirmed leaks at quick couplings and a cracked drain valve. Each 10% of extra duty costs roughly 9 kW continuously."
+  },
+  {
+    "id": "KB04", "type": "Maintenance log", "severity": "low", "date": "2026-05-20",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT3",
+    "title": "Ultrasonic leak survey of compressed-air lines",
+    "tags": ["leak", "survey", "repair"],
+    "text": "Technicians used an ultrasonic detector to tag 23 air leaks across loom headers and hose connections. Leaking couplings were replaced and two drain valves repaired. After the repair the compressor duty cycle fell back to 58% and night-time base load dropped by 7 kW."
+  },
+  {
+    "id": "KB05", "type": "Anomaly incident", "severity": "high", "date": "2026-06-11",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT7",
+    "title": "Base compressor bearing degradation",
+    "tags": ["bearing", "wear", "vibration", "compressor"],
+    "text": "Loaded power on compressor C1 rose by 6% at an unchanged duty cycle over four weeks. Vibration readings at the motor drive end increased and the bearing was running hotter than on the sister machine. The trend is consistent with bearing wear rather than higher air demand, because flow and pressure were unchanged."
+  },
+  {
+    "id": "KB06", "type": "Diagnostic playbook", "severity": "info", "date": "2026-01-18",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "",
+    "title": "Playbook: rising motor power at constant load",
+    "tags": ["motor", "bearing", "degradation", "inspection"],
+    "text": "When a motor draws more kW for the same output, check its mechanical condition before the electrical supply. Typical causes are worn bearings, misalignment, poor lubrication and a clogged inlet or fan. Compare against a sister machine, record vibration and temperature, and schedule an inspection before the bearing fails."
+  },
+  {
+    "id": "KB07", "type": "Anomaly incident", "severity": "medium", "date": "2026-07-03",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Compressor room", "meter": "MT8",
+    "title": "Inlet filter clogging on compressor C2",
+    "tags": ["filter", "clogged", "compressor", "intake"],
+    "text": "The variable-speed compressor C2 needed a higher speed and more power to deliver the same air flow. Differential pressure across the inlet filter had doubled since the last service. The blocked filter starved the compressor intake. Replacing the filter element restored specific power from 7.4 to 6.6 kW per cubic metre per minute."
+  },
+  {
+    "id": "KB08", "type": "Anomaly incident", "severity": "high", "date": "2026-04-06",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Humidification", "meter": "MT4",
+    "title": "Humidification left on during weekly shutdown",
+    "tags": ["humidification", "shutdown", "weekly", "sunday"],
+    "text": "On Sundays, when the weaving unit is closed, humidifier pumps H1 to H3 kept running for the full 24 hours. MT4 showed the humidification plant near full load while MT2 recorded no production. The pattern repeated every week, which separates it from a one-off missed switch-off. About 520 kWh is wasted on each shutdown day."
+  },
+  {
+    "id": "KB09", "type": "Energy recommendation", "severity": "low", "date": "2026-04-20",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Humidification", "meter": "MT4",
+    "title": "Schedule the humidifier plant with the production calendar",
+    "tags": ["humidifier", "schedule", "holiday", "saving"],
+    "text": "Link the humidification controller to the production calendar so the plant stops on holidays and weekly closures. Keep a short pre-start window before the Monday shift to restore hall humidity. The expected saving is 2,000 kWh per month without affecting yarn quality."
+  },
+  {
+    "id": "KB10", "type": "Anomaly incident", "severity": "medium", "date": "2026-08-14",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Production hall - Line 1", "meter": "MT2",
+    "title": "Motor wear on line 1 looms",
+    "tags": ["motor", "wear", "power factor", "line 1"],
+    "text": "Line 1 kW has diverged from line 2 for the same pick rate, and the line 1 power factor dropped from 0.82 to 0.78. The looms on line 1 are older and their main motors show worn windings and bearings. The divergence grew slowly over three months, so it was missed by daily threshold alarms."
+  },
+  {
+    "id": "KB11", "type": "Anomaly incident", "severity": "low", "date": "2026-03-27",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Utilities", "meter": "MT6",
+    "title": "Unauthorised load on a socket circuit",
+    "tags": ["socket", "unauthorised", "phase imbalance"],
+    "text": "A single-phase current step appeared on phase Y of the utilities meter MT6 every afternoon. The power factor on that circuit was poor, around 0.6. Investigation found an unauthorised welding set and a space heater plugged into a maintenance socket. The phase imbalance increased the neutral current."
+  },
+  {
+    "id": "KB12", "type": "Anomaly incident", "severity": "medium", "date": "2026-06-25",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Utilities", "meter": "MT6",
+    "title": "Water pump short-cycling on a failing float switch",
+    "tags": ["pump", "short-cycling", "float switch"],
+    "text": "The borewell pump P1 started and stopped every few minutes instead of running in long cycles. The switch count per 30 minutes jumped from 2 to 14 and mean kW rose modestly. The float switch in the overhead tank was failing and chattering. Frequent starts heat the motor windings and wear the contactor."
+  },
+  {
+    "id": "KB13", "type": "Diagnostic playbook", "severity": "info", "date": "2026-02-28",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "",
+    "title": "Playbook: detecting short cycling equipment",
+    "tags": ["short cycling", "sensor", "starts per hour"],
+    "text": "Short cycling means a machine switches on and off far more often than its design intends. Count starts per hour from the current signal, compare with the normal cycle length, and inspect the controlling sensor: float switches, pressure switches and thermostats are common culprits. Rapid cycling increases wear and starting losses."
+  },
+  {
+    "id": "KB14", "type": "Anomaly incident", "severity": "medium", "date": "2026-07-19",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Preparatory", "meter": "MT5",
+    "title": "Batch machine run inside the evening peak window",
+    "tags": ["peak", "tariff", "maximum demand", "scheduling"],
+    "text": "The sizing machine in the preparatory department was run between 17:00 and 21:00, inside the expensive peak tariff window. Monthly maximum demand rose by 38 kW and the bill increased even though energy use was unchanged. Moving the batch to the morning shift avoids the peak charge."
+  },
+  {
+    "id": "KB15", "type": "Energy recommendation", "severity": "medium", "date": "2026-09-05",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "Main incomer", "meter": "MT1",
+    "title": "Improve power factor with capacitor bank tuning",
+    "tags": ["power factor", "capacitor", "penalty"],
+    "text": "Main meter MT1 averaged a power factor of 0.86, below the utility limit of 0.90, which causes a reactive energy penalty on every bill. Re-tuning the automatic capacitor bank and replacing two failed capacitor steps should lift the power factor above 0.95 and remove the penalty."
+  },
+  {
+    "id": "KB16", "type": "Anomaly incident", "severity": "medium", "date": "2026-05-09",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Loading dock", "meter": "MT2",
+    "title": "Cold chamber door left open during night loading",
+    "tags": ["door", "refrigeration", "loading", "night"],
+    "text": "The chamber 3 door stayed open for 50 minutes during night-time loading. Refrigeration compressors on the plant meter ramped to full load and the defrost cycle triggered twice. Product temperature rose by 3 degrees. A door alarm and strip curtains are recommended."
+  },
+  {
+    "id": "KB17", "type": "Anomaly incident", "severity": "high", "date": "2026-06-30",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Refrigeration plant", "meter": "MT3",
+    "title": "Refrigeration compressor overheating and tripping",
+    "tags": ["refrigeration", "overheating", "condenser", "trip"],
+    "text": "The screw compressor in the refrigeration plant tripped on high discharge temperature twice in one week. Power draw was 12% above normal before each trip. The condenser coils were fouled with dust, raising head pressure and making the compressor overheat. Cleaning the condenser reduced power and stopped the trips."
+  },
+  {
+    "id": "KB18", "type": "Anomaly incident", "severity": "medium", "date": "2026-08-02",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Cold chambers", "meter": "MT4",
+    "title": "Defrost heater stuck on in chamber 2",
+    "tags": ["defrost", "heater", "relay"],
+    "text": "The defrost heater in chamber 2 remained energised for six hours instead of 30 minutes. The cold-room meter showed a steady 9 kW resistive load and the evaporator fans fought the heat. A welded relay contact in the defrost timer was the cause."
+  },
+  {
+    "id": "KB19", "type": "Anomaly incident", "severity": "medium", "date": "2026-09-12",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Cold chambers", "meter": "MT4",
+    "title": "Cold-room door seal degradation",
+    "tags": ["seal", "gasket", "refrigeration"],
+    "text": "Longer refrigeration cycles appeared without any change in stock throughput or ambient temperature. Inspection found torn and flattened door gaskets on chambers 1 and 4, letting warm air infiltrate. Replacing the seals cut compressor run time by 11%."
+  },
+  {
+    "id": "KB20", "type": "Maintenance log", "severity": "low", "date": "2026-07-28",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Cold chambers", "meter": "MT4",
+    "title": "Evaporator coil cleaning and fan check",
+    "tags": ["evaporator", "maintenance", "fan"],
+    "text": "Quarterly maintenance cleaned the evaporator coils in all chambers and replaced one failed fan motor. Iced coils had reduced airflow. After cleaning, the compressor duty cycle dropped and suction pressure recovered."
+  },
+  {
+    "id": "KB21", "type": "Energy recommendation", "severity": "low", "date": "2026-08-21",
+    "factory": "cold_storage", "factory_name": "Indus Cold Chain", "zone": "Refrigeration plant", "meter": "MT3",
+    "title": "Shift pre-cooling to off-peak hours",
+    "tags": ["pre-cooling", "peak", "tariff", "off-peak"],
+    "text": "Cold stores can pre-cool chambers below set-point during cheaper night hours and coast through the evening peak tariff window. The thermal mass of stored product keeps the temperature stable. The expected reduction in maximum demand is 45 kW."
+  },
+  {
+    "id": "KB22", "type": "Anomaly incident", "severity": "high", "date": "2026-05-16",
+    "factory": "plastics_moulding", "factory_name": "Ravi Polymers (Pvt) Ltd", "zone": "Moulding hall", "meter": "MT2",
+    "title": "Injection moulding barrel heater failure",
+    "tags": ["heater", "injection moulding", "phase imbalance"],
+    "text": "One heater band on injection machine IM4 failed open, so the remaining zones ran longer at full power to hold barrel temperature. The phase currents became unbalanced and cycle times increased. Thermal imaging located the cold band."
+  },
+  {
+    "id": "KB23", "type": "Anomaly incident", "severity": "medium", "date": "2026-06-08",
+    "factory": "plastics_moulding", "factory_name": "Ravi Polymers (Pvt) Ltd", "zone": "Auxiliaries", "meter": "MT3",
+    "title": "Chiller running at full load overnight",
+    "tags": ["chiller", "overnight", "valve"],
+    "text": "The process chiller stayed at full load through the night although only two moulding machines were running. A stuck chilled-water valve bypassed the idle machines, so the chiller kept cooling water that nobody used."
+  },
+  {
+    "id": "KB24", "type": "Anomaly incident", "severity": "medium", "date": "2026-07-11",
+    "factory": "plastics_moulding", "factory_name": "Ravi Polymers (Pvt) Ltd", "zone": "Moulding hall", "meter": "MT2",
+    "title": "Hydraulic pump motor drawing excess current",
+    "tags": ["hydraulic", "pump", "motor", "internal leakage"],
+    "text": "The hydraulic pump motor on IM2 drew 15% more current than normal at the same clamp pressure. Internal leakage in the worn pump forced longer pressure holding, and the oil temperature was high."
+  },
+  {
+    "id": "KB25", "type": "Energy recommendation", "severity": "low", "date": "2026-09-01",
+    "factory": "plastics_moulding", "factory_name": "Ravi Polymers (Pvt) Ltd", "zone": "Moulding hall", "meter": "MT2",
+    "title": "Retrofit servo drives on hydraulic moulding machines",
+    "tags": ["servo", "hydraulic", "efficiency"],
+    "text": "Fixed-speed hydraulic pumps waste energy while idling between shots. Servo-driven pumps run only when pressure is needed and can cut moulding machine consumption by 30 to 50 percent."
+  },
+  {
+    "id": "KB26", "type": "Maintenance log", "severity": "low", "date": "2026-08-09",
+    "factory": "plastics_moulding", "factory_name": "Ravi Polymers (Pvt) Ltd", "zone": "Utilities", "meter": "MT4",
+    "title": "Air compressor drain valve replacement",
+    "tags": ["compressed air", "drain valve", "leak"],
+    "text": "The zero-loss drain valve on the plant air compressor was stuck open and blowing compressed air continuously. It was replaced, the leak noise near the receiver tank stopped and the base load fell by 3 kW."
+  },
+  {
+    "id": "KB27", "type": "Anomaly incident", "severity": "medium", "date": "2026-04-23",
+    "factory": "metal_workshop", "factory_name": "Al-Hadeed Engineering Works", "zone": "Fabrication bay", "meter": "MT3",
+    "title": "Welding sets left energised after hours",
+    "tags": ["welding", "after hours", "idle"],
+    "text": "Six welding rectifiers stayed switched on after the evening shift, drawing no-load current all night. The fabrication bay meter showed a flat 4 kW base load until morning. Operators were reminded and a main isolator lockout was added."
+  },
+  {
+    "id": "KB28", "type": "Anomaly incident", "severity": "high", "date": "2026-07-30",
+    "factory": "metal_workshop", "factory_name": "Al-Hadeed Engineering Works", "zone": "Machine shop", "meter": "MT2",
+    "title": "CNC spindle motor vibration and power rise",
+    "tags": ["cnc", "spindle", "bearing", "vibration"],
+    "text": "The spindle motor on the CNC lathe showed rising vibration and a 9% increase in idle power. Bearing noise was audible at high speed, a sign of advanced bearing wear. The spindle bearing was replaced before it seized."
+  },
+  {
+    "id": "KB29", "type": "Anomaly incident", "severity": "low", "date": "2026-05-29",
+    "factory": "metal_workshop", "factory_name": "Al-Hadeed Engineering Works", "zone": "Utilities", "meter": "MT4",
+    "title": "Workshop compressor short cycling",
+    "tags": ["compressor", "short cycling", "pressure switch"],
+    "text": "The small piston compressor started 20 times an hour because the receiver tank was undersized and the pressure switch band was narrow. Motor temperature rose. Widening the pressure band and adding a receiver reduced the cycling."
+  },
+  {
+    "id": "KB30", "type": "Energy recommendation", "severity": "medium", "date": "2026-09-18",
+    "factory": "metal_workshop", "factory_name": "Al-Hadeed Engineering Works", "zone": "Main incomer", "meter": "MT1",
+    "title": "Power factor correction for the induction furnace",
+    "tags": ["power factor", "furnace", "harmonics"],
+    "text": "The induction furnace lowers the site power factor to 0.79 during melts and adds harmonic distortion. A detuned capacitor bank with a harmonic filter is recommended so that correction does not resonate with the furnace."
+  },
+  {
+    "id": "KB31", "type": "Anomaly incident", "severity": "medium", "date": "2026-08-26",
+    "factory": "metal_workshop", "factory_name": "Al-Hadeed Engineering Works", "zone": "Machine shop", "meter": "MT2",
+    "title": "Voltage sag during furnace start",
+    "tags": ["voltage sag", "furnace", "trip"],
+    "text": "Phase voltages dropped 9% for several seconds whenever the furnace started, tripping two CNC drives. A soft starter and supply reinforcement were recommended."
+  },
+  {
+    "id": "KB32", "type": "Anomaly incident", "severity": "medium", "date": "2026-09-09",
+    "factory": "bakery_food", "factory_name": "Shaheen Bakers", "zone": "Bakery hall", "meter": "MT2",
+    "title": "Oven preheat started too early",
+    "tags": ["oven", "preheat", "schedule"],
+    "text": "The main deck oven reached full preheat 41 minutes before the first scheduled batch at 03:00. Heating elements ran at full power with an empty oven. The controller clock had drifted after a power cut."
+  },
+  {
+    "id": "KB33", "type": "Anomaly incident", "severity": "high", "date": "2026-06-17",
+    "factory": "bakery_food", "factory_name": "Shaheen Bakers", "zone": "Cold store", "meter": "MT4",
+    "title": "Cold store compressor overheating in summer",
+    "tags": ["refrigeration", "overheating", "condenser", "summer"],
+    "text": "During the June heat the cold store condensing unit ran continuously and its compressor overheated, tripping on thermal overload. The condenser had been installed in direct sun with poor ventilation."
+  },
+  {
+    "id": "KB34", "type": "Anomaly incident", "severity": "low", "date": "2026-07-07",
+    "factory": "bakery_food", "factory_name": "Shaheen Bakers", "zone": "Dough preparation", "meter": "MT3",
+    "title": "Dough mixer motor overload",
+    "tags": ["mixer", "motor", "overload"],
+    "text": "The spiral mixer motor drew current above its rating when operators loaded double batches. The overload relay tripped twice. Batch size limits were posted at the machine."
+  },
+  {
+    "id": "KB35", "type": "Energy recommendation", "severity": "low", "date": "2026-08-30",
+    "factory": "bakery_food", "factory_name": "Shaheen Bakers", "zone": "Bakery hall", "meter": "MT2",
+    "title": "Recover oven exhaust heat for proofing",
+    "tags": ["heat recovery", "oven", "proofing"],
+    "text": "Oven flue heat can warm the proofing cabinets instead of using electric heaters. A simple heat exchanger could save about 60 kWh per day."
+  },
+  {
+    "id": "KB36", "type": "Diagnostic playbook", "severity": "info", "date": "2026-01-25",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "MT1",
+    "title": "Playbook: investigating high night-time base load",
+    "tags": ["night", "base load", "after hours", "checklist"],
+    "text": "A high overnight base load is one of the most common energy anomalies. List every load that should be off after the last shift: compressors, humidifiers, chillers, welding sets and lighting. Compare night meter readings with the shutdown checklist and trace any meter that stays elevated."
+  },
+  {
+    "id": "KB37", "type": "Diagnostic playbook", "severity": "info", "date": "2026-03-05",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "",
+    "title": "Playbook: phase imbalance and neutral current",
+    "tags": ["phase imbalance", "neutral", "single phase"],
+    "text": "Unbalanced phase currents increase losses and heat transformers. Compare the three phase currents; an imbalance above 10% usually comes from single-phase loads on one phase, a failed heater element or a faulty motor winding."
+  },
+  {
+    "id": "KB38", "type": "Meter note", "severity": "info", "date": "2026-02-02",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "",
+    "title": "Why a shared main meter cannot isolate a single machine",
+    "tags": ["metering", "submeter", "observability"],
+    "text": "When several machines share one meter, an anomaly can be located to the zone but not to a specific machine. VoltMize marks such alerts as zone-level evidence. Install a submeter when one machine causes repeated alerts."
+  },
+  {
+    "id": "KB39", "type": "Diagnostic playbook", "severity": "info", "date": "2026-02-14",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "",
+    "title": "Playbook: overheating motors and drives",
+    "tags": ["overheating", "motor", "ventilation"],
+    "text": "Motor overheating comes from overload, poor ventilation, high ambient temperature, voltage imbalance or frequent starts. Check the current against the nameplate, clean cooling fans and filters, and verify supply voltage balance before replacing the motor."
+  },
+  {
+    "id": "KB40", "type": "Energy recommendation", "severity": "info", "date": "2026-03-12",
+    "factory": "textile_reference", "factory_name": "Reference Weaving Unit", "zone": "All zones", "meter": "MT1",
+    "title": "Avoid the peak tariff with load scheduling",
+    "tags": ["peak", "tariff", "scheduling", "bill"],
+    "text": "Industrial tariffs charge more during the evening peak window. Moving flexible batch processes, pre-cooling and water pumping to off-peak hours reduces maximum demand charges and the monthly bill."
+  }
+]

@@ -1,0 +1,3 @@
+# The ranking module needs numpy. matplotlib is only for the charts in evaluate.py.
+numpy>=1.26
+matplotlib>=3.9
